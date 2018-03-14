@@ -44,3 +44,31 @@ describe ('syllableFinder', function() {
     expect(result).not.toEqual(0);
   });
 });
+//Since e at the end of the word is a silent vowel, an e at the end of the word does not count as a vowel.
+describe ('syllableFinder', function() {
+
+  it ('should return the number of syllables in a string', function() {
+    let string = "excellence arrogance fate";
+    let result = syllableFinder("excellence arrogance fate");
+    expect(result).toEqual(7);
+    expect(result).not.toEqual(10);
+  });
+});
+//Syllable checker returns true if number of syllables is the same as the number you expected, so to determine if three lines are a haiku, we determine if line 1 is 5 syllables, line 2 is 7 syllables, and line 3 is 5 syllables.
+describe ('syllableChecker', function() {
+
+  it ('should return if line 1 is 5 syllables, line 2 is 7 syllables, and line 3 is 5 syllables.', function() {
+    let string1 = "water flows under";
+    let string2 = "the bridge like a torrential"
+    let string3 = "downpour of sewage"
+    let result1 = syllableChecker(string1, 5);
+    let result2 = syllableChecker(string2, 7);
+    let result3 = syllableChecker(string3, 5);
+    expect(result1).toEqual(true);
+    expect(result2).toEqual(true);
+    expect(result3).toEqual(true);
+    expect(result1).not.toEqual(false);
+    expect(result2).not.toEqual(false);
+    expect(result3).not.toEqual(false);
+  });
+});

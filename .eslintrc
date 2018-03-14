@@ -11,6 +11,9 @@
     "rules": {
         "no-console": "warn",
         "semi": 1,
-        "indent": ["warn", 2]
+        "indent": ["warn", 2],
+        "no-useless-escape": "warn",
+        "no-unused-vars": "warn",
+        "no-undef": "warn"
     }
 }

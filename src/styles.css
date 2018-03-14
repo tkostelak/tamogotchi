@@ -18,7 +18,8 @@ body {
 #haikuContainer {
   box-shadow: 0px 0px 25px black;
   margin-top: 30px;
-  border: 2px solid black;
+  border: 5px solid brown;
   padding: 75px 75px 75px 75px;
+  background-image: url("http://heinrichsgruppe.de/wp-content/uploads/2017/01/large-old-paper-or-parchment-background-texture.jpg");
 
 }

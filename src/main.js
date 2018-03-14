@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
 
+
 $(document).ready(function() {
     $("#haikuForm").submit(function(event) {
       event.preventDefault();
@@ -17,7 +18,7 @@ $(document).ready(function() {
       let lineTwoCount = syllableFinder(haikuLineTwo);
       let lineThreeCount = syllableFinder(haikuLineThree);
 
-      if ((syllableChecker(haikuLineOne, 5) == true) && (syllableChecker(haikuLineTwo, 7) == true) && (syllableChecker(haikuLineThree, 5) == true))
+      if ((syllableChecker(haikuLineOne, 5) === true) && (syllableChecker(haikuLineTwo, 7) === true) && (syllableChecker(haikuLineThree, 5) === true))
       {
         $("#results").html('<div id="haikuContainer">' + '<h3>Congrats. It is a Haiku! ' + 'Line one contains ' + lineOneCount + ' syllables, line two contains ' + lineTwoCount + ' syllables, and line three contains ' + lineThreeCount + ' syllables.' + '</h3>' + '</div>');
       }

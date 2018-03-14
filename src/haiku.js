@@ -55,6 +55,10 @@ export function syllableFinder(words) {
     {
       vowelCount -= 1;
     }
+    if(word.includes("tial"))
+    {
+      vowelCount -= 1;
+    }
     if(word.includes("ae"))
     {
       vowelCount -= 1;
@@ -90,7 +94,7 @@ return syllableCount;
 
 export function syllableChecker(input, syllableGoal) {
   let syllableNum = syllableFinder(input);
-  if (syllableNum == syllableGoal)
+  if (syllableNum === syllableGoal)
   {
     return true;
   }
