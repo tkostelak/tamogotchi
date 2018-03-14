@@ -1,4 +1,5 @@
 import { syllableFinder } from '../src/haiku.js';
+import { syllableChecker } from '../src/haiku.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -13,10 +14,16 @@ $(document).ready(function() {
       var haikuLineThree = $("#haikuThirdLine").val();
 
       let lineOneCount = syllableFinder(haikuLineOne);
-      alert (lineOneCount);
       let lineTwoCount = syllableFinder(haikuLineTwo);
-      alert (lineTwoCount);
       let lineThreeCount = syllableFinder(haikuLineThree);
-      alert (lineThreeCount);
+
+      if ((syllableChecker(haikuLineOne, 5) == true) && (syllableChecker(haikuLineTwo, 7) == true) && (syllableChecker(haikuLineThree, 5) == true))
+      {
+        $("#results").html('<h3>Congrats. It is a Haiku!! ' + 'Line one contains ' + lineOneCount + ' syllables, line two contains ' + lineTwoCount + ' syllables, and line three contains ' + lineThreeCount + ' syllables.' + '</h3>');
+      }
+      else
+      {
+        $("#results").html('<h3>Good try, but no haiku. ' + 'Line one contains ' + lineOneCount + ' syllables, line two contains ' + lineTwoCount + ' syllables, and line three contains ' + lineThreeCount + ' syllables.' + '</h3>');
+      }
   });
 });

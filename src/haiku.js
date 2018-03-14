@@ -1,13 +1,13 @@
 export function syllableFinder(words) {
   console.log(words);
   let wordsLowerCase = words.toLowerCase();
-  let wordArray = wordsLowerCase.split(" ")
+  let wordArray = wordsLowerCase.split(" ");
   let syllableCount = 0;
 
   wordArray.forEach(function(word) {
 
     let vowelCount = 0;
-    let characterArray = word.split("")
+    let characterArray = word.split("");
 
     if(word.includes("ai"))
     {
@@ -37,9 +37,25 @@ export function syllableFinder(words) {
     {
       vowelCount -= 1;
     }
-    if(word.length ==3 && word.includes("ie"))
+    if(word.length == 3 && word.includes("ie"))
     {
       vowelCount += 1;
+    }
+    if(word.length == 3 && word.includes("the"))
+    {
+      vowelCount += 1;
+    }
+    if(word.length == 4 && word.includes("eyes"))
+    {
+      vowelCount -= 1;
+    }
+    if(word.length == 7 && word.includes("eyeball"))
+    {
+      vowelCount -= 1;
+    }
+    if(word.length == 8 && word.includes("eyeballs"))
+    {
+      vowelCount -= 1;
     }
     if(word.includes("ea"))
     {
@@ -78,4 +94,16 @@ export function syllableFinder(words) {
     syllableCount += vowelCount;
   });
 return syllableCount;
+}
+
+export function syllableChecker(input, syllableGoal) {
+  let syllableNum = syllableFinder(input);
+  if (syllableNum == syllableGoal)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
