@@ -19,7 +19,7 @@ $(document).ready(function() {
 
       if ((syllableChecker(haikuLineOne, 5) == true) && (syllableChecker(haikuLineTwo, 7) == true) && (syllableChecker(haikuLineThree, 5) == true))
       {
-        $("#results").html('<h3>Congrats. It is a Haiku!! ' + 'Line one contains ' + lineOneCount + ' syllables, line two contains ' + lineTwoCount + ' syllables, and line three contains ' + lineThreeCount + ' syllables.' + '</h3>');
+        $("#results").html('<div id="haikuContainer">' + '<h3>Congrats. It is a Haiku! ' + 'Line one contains ' + lineOneCount + ' syllables, line two contains ' + lineTwoCount + ' syllables, and line three contains ' + lineThreeCount + ' syllables.' + '</h3>' + '</div>');
       }
       else
       {

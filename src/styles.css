@@ -14,3 +14,11 @@ body {
   margin-top: 30px;
   margin-bottom: 75px;
 }
+
+#haikuContainer {
+  box-shadow: 0px 0px 25px black;
+  margin-top: 30px;
+  border: 2px solid black;
+  padding: 75px 75px 75px 75px;
+
+}

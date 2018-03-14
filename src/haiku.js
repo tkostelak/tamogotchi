@@ -2,6 +2,7 @@ export function syllableFinder(words) {
   console.log(words);
   let wordsLowerCase = words.toLowerCase();
   let wordArray = wordsLowerCase.split(" ");
+  console.log(wordArray);
   let syllableCount = 0;
 
   wordArray.forEach(function(word) {
@@ -41,19 +42,8 @@ export function syllableFinder(words) {
     {
       vowelCount += 1;
     }
-    if(word.length == 3 && word.includes("the"))
-    {
-      vowelCount += 1;
-    }
-    if(word.length == 4 && word.includes("eyes"))
-    {
-      vowelCount -= 1;
-    }
-    if(word.length == 7 && word.includes("eyeball"))
-    {
-      vowelCount -= 1;
-    }
-    if(word.length == 8 && word.includes("eyeballs"))
+
+    if(word.includes("eye") && (!("" + characterArray[characterArray.length-1] + characterArray[characterArray.length-2] + characterArray[characterArray.length-3] + "").includes("eye")) && characterArray[characterArray.length-1] !== "r")
     {
       vowelCount -= 1;
     }
@@ -91,6 +81,8 @@ export function syllableFinder(words) {
           vowelCount += 1;
         }
       });
+    if(vowelCount === 0) vowelCount += 1;
+    if(word === ("")) vowelCount = 0;
     syllableCount += vowelCount;
   });
 return syllableCount;
