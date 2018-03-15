@@ -18,6 +18,14 @@ export function syllableFinder(words) {
     {
       vowelCount -= 1;
     }
+    if(word.includes("oi"))
+    {
+      vowelCount -= 1;
+    }
+    if(word.includes("ee"))
+    {
+      vowelCount -= 1;
+    }
     if(word.includes("ou"))
     {
       vowelCount -= 1;
@@ -26,7 +34,11 @@ export function syllableFinder(words) {
     {
       vowelCount -= 1;
     }
-    if(word.includes("ie"))
+    if(word.includes("ie") && (!("" + characterArray[characterArray.length-1] + characterArray[characterArray.length-2] + characterArray[characterArray.length-3] + "").includes("ier")))
+    {
+      vowelCount -= 1;
+    }
+    if(word.includes("ie") && (!("" + characterArray[characterArray.length-1] + characterArray[characterArray.length-2] + characterArray[characterArray.length-3] + "").includes("nce")))
     {
       vowelCount -= 1;
     }
@@ -42,7 +54,10 @@ export function syllableFinder(words) {
     {
       vowelCount += 1;
     }
-
+    if(word.length <= 5 && word.includes("oa"))
+    {
+      vowelCount -= 1;
+    }
     if(word.includes("eye") && (!("" + characterArray[characterArray.length-1] + characterArray[characterArray.length-2] + characterArray[characterArray.length-3] + "").includes("eye")) && characterArray[characterArray.length-1] !== "r")
     {
       vowelCount -= 1;
@@ -55,7 +70,19 @@ export function syllableFinder(words) {
     {
       vowelCount -= 1;
     }
-    if(word.includes("tial"))
+    if(word.endsWith("tion") || (word.endsWith("sion")))
+    {
+      vowelCount -= 1;
+    }
+    if(word.startsWith("qu"))
+    {
+      vowelCount -= 1;
+    }
+    if(word.endsWith("tial"))
+    {
+      vowelCount -= 1;
+    }
+    if(word.includes("ei") && (word.includes("gh")))
     {
       vowelCount -= 1;
     }
@@ -64,6 +91,10 @@ export function syllableFinder(words) {
       vowelCount -= 1;
     }
     if(word.includes("ey"))
+    {
+      vowelCount -= 1;
+    }
+    if(word.endsWith("ed"))
     {
       vowelCount -= 1;
     }
@@ -102,4 +133,16 @@ export function syllableChecker(input, syllableGoal) {
   {
     return false;
   }
+}
+
+export function getWordBySyllable(syllableGoal) {
+  let randomWords = require('random-words');
+  let newWord = randomWords({exactly: 1, maxLength: 15});
+  let word = newWord.join();
+
+    while(syllableFinder(word) != syllableGoal)
+    {
+      word = (randomWords({exactly: 1, maxLength: 15})).join();
+    }
+    return word;
 }

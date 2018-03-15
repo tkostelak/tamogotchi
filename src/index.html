@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <title>haiku-project</title>
   </head>
@@ -9,6 +10,9 @@
       <div class="jumbotron">
       <h1 id="titleText">Haiku Analyzer</h1>
       </div>
+        <img src="https://3.bp.blogspot.com/-mbuqu9A9hMM/WJH9hO0EWcI/AAAAAAAAOtE/bX-Z3TIMrwMil5GQpALmKR_UgPPUMkfiACLcB/s1600/img530.jpg" alt="calligraphy" id="titleImage">
+        <button class= "btn btn-primary" type="submit" id="generateHaiku" name="generateHaiku">Create a random Haiku
+        </button>
         <form id="haikuForm">
           <div class="form-group">
           <label for="haikuFirstLine">Type first line of Haiku here:</label>
@@ -26,10 +30,16 @@
           <input required class="form-control input-lg" type="text" name="haikuThirdLine"  id="haikuThirdLine">
           </div>
           <hr>
-          <button class = "btn btn-info" type="submit" name="submitHaiku">Submit</button>
+          <button class = "btn btn-primary" type="submit" name="submitHaiku" id="submitButton">Submit</button>
         </form>
         <div id="results">
         </div>
+        <div id="randomHaikuResult">
+        </div>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
   </body>
 </html>

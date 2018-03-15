@@ -1,5 +1,6 @@
 import { syllableFinder } from '../src/haiku.js';
 import { syllableChecker } from '../src/haiku.js';
+import { getWordBySyllable} from '../src/haiku.js';
 
 describe ('syllableFinder', function() {
 
@@ -70,5 +71,15 @@ describe ('syllableChecker', function() {
     expect(result1).not.toEqual(false);
     expect(result2).not.toEqual(false);
     expect(result3).not.toEqual(false);
+  });
+});
+
+//When using randomWords function with syllable checker, we should be able to return words containing a specified amount of syllables.
+describe ('getWordBySyllable', function() {
+
+  it ('should return a word that contains the specified amount of syllables.', function() {
+    let result = getWordBySyllable(3);
+    expect(syllableChecker(result, 3)).toEqual(true);
+    expect(syllableChecker(result, 3)).not.toEqual(false);
   });
 });
