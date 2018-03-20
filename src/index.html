@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
-    <title>haiku-project</title>
+    <title>homie-simulator</title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
-      <h1 id="titleText">Haiku Analyzer</h1>
+  <div class="container" id=titleContainer>
+    <div class="jumbotron">
+      <h1 id="titleText">Homie Simulator</h1>
       </div>
-        <img src="https://3.bp.blogspot.com/-mbuqu9A9hMM/WJH9hO0EWcI/AAAAAAAAOtE/bX-Z3TIMrwMil5GQpALmKR_UgPPUMkfiACLcB/s1600/img530.jpg" alt="calligraphy" id="titleImage">
-        <button class= "btn btn-primary" type="submit" id="generateHaiku" name="generateHaiku">Create a random Haiku
-        </button>
-        <form id="haikuForm">
-          <div class="form-group">
-          <label for="haikuFirstLine">Type first line of Haiku here:</label>
-          <input required class="form-control input-lg" type="text" name="haikuFirstLine" id="haikuFirstLine">
-          </div>
-          <hr>
-          <div class="form-group">
-          <label for="haikuSecondLine">Type second line of Haiku here:</label>
-          <input required class="form-control input-lg" type="text" name="haikuSecondLine"
-          id="haikuSecondLine">
-          </div>
-          <hr>
-          <div class="form-group">
-          <label for="haikuThirdLine">Type third line of Haiku here:</label>
-          <input required class="form-control input-lg" type="text" name="haikuThirdLine"  id="haikuThirdLine">
-          </div>
-          <hr>
-          <button class = "btn btn-primary" type="submit" name="submitHaiku" id="submitButton">Submit</button>
-        </form>
-        <div id="results">
+      <div id=homieStats>
+        <br>
+        <div id="restText">
         </div>
-        <div id="randomHaikuResult">
+        <h3>Rest</h3>
+        <br>
+        <div class="progress" id="sleepyBar">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+          </div>
         </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
+        <br>
+        <div id="hungerText">
+        </div>
+        <h3>Hunger</h3>
+        <br>
+        <div class="progress" id="hungerBar">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+          </div>
+        </div>
+        <br>
+        <div id="funText">
+        </div>
+        <h3>Fun</h3>
+        <br>
+        <div class="progress" id="funBar">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+          </div>
+        </div>
+      <br>
+      <br>
+      </div>
+      <img src="http://drawntodraw.com/wp-content/uploads/2014/04/batCat-001.jpg" id="lilHomiePic" alt="picture of lil-homie">
+      </div>
+      <div class="container" id="lilHomieContainer">
+        <h1 id="lilHomieText">LIL' HOMIE</h1>
+      </div>
+      <div class="container" id="buttonContainer">
+        <button class="btn" id="sleepButton"> SLEEP</button>
+        <button class="btn" id="feedButton"> FEED</button>
+        <button class="btn" id="playButton"> PLAY</button>
+    </div>
   </body>
 </html>
