@@ -3,50 +3,56 @@ export let tamagotchi = {
   restLevel: 100,
   funLevel: 100,
 
-    setHungerLevel: function(){
-      const hungerInterval = setInterval(() => {
-        this.foodLevel--;
-        if (this.foodLevel === 0) {
-          clearInterval(hungerInterval);
-          return "Your Tamagotchi died of starvation!";
-        }
-      }, 1000);
-    },
-    setTiredLevel: function(){
-      const tiredInterval = setInterval(() => {
-        this.tiredLevel--;
-        if (this.tiredLevel === 0) {
-          clearInterval(tiredInterval);
-          return "Your Tamagotchi died of sleep deprivation!";
-        }
-      }, 1000);
-    },
-    setEnjoymentLevel: function(){
-      const enjoymentInterval = setInterval(() => {
-        this.enjoymentLevel--;
-        if (this.enjoymentLevel === 0) {
-          clearInterval(enjoymentInterval);
-          return "Your Tamagotchi died of boredom!";
-        }
-      }, 1000);
-    },
     timePasses: function(){
       setInterval(() => {
-        this.foodLevel--;
-        this.funLevel--;
-        this.restLevel--;
+        this.foodLevel -= 5;
+        this.funLevel -= 3;
+        this.restLevel -= 4;
       }, 1000);
     },
     feed: function() {
       let that = this;
-      that.foodLevel += 10
+      if (that.foodLevel >= 100) that.foodLevel += 0;
+      else that.foodLevel += 5
     },
     rest: function() {
       let that = this;
-      that.restLevel += 10
+      if (that.restLevel >= 100) that.restLevel += 0;
+      else that.restLevel += 5
     },
     play: function() {
       let that = this;
-      that.funLevel += 10
+      if (that.funLevel >= 100) that.funLevel += 0;
+      else that.funLevel += 5
+    },
+    lowRest : function() {
+      let that = this;
+      if (that.restLevel <= 30 ) return true;
+      else return false;
+    },
+    lowFood : function() {
+      let that = this;
+      if (that.foodLevel <= 30 ) return true;
+      else return false;
+    },
+    lowFun : function() {
+      let that = this;
+      if (that.funLevel <= 30 ) return true;
+      else return false;
+    },
+    diedOfStarvation: function() {
+      let that = this;
+      if (that.foodLevel <= 0) return true;
+      else return false;
+    },
+    diedOfSleepDep: function() {
+      let that = this;
+      if (that.restLevel <= 0) return true;
+      else return false;
+    },
+    diedOfBoredom: function() {
+      let that = this;
+      if (that.funLevel <= 0) return true;
+      else return false;
     },
   };
